@@ -67,17 +67,27 @@ Applies ranking adjustments based on modal logic distinction:
 
 **Inspired by:** LayerNorm interpretation as discarding contingent magnitude while preserving necessary relational structure.
 
-### 4. Gateway Plugin Integration (Planned)
-**Typed hook-based lifecycle management:**
+### 4. Gateway Plugin Integration ✅ **ACTIVATED**
+**Typed hook-based lifecycle management — Production deployed:**
 
-```typescript
-// Auto-generates handoff on session close
-hooks.session_end(async (session) => {
-  if (session.turnCount >= minTurnsThreshold) {
-    await generateHandoffArtifact(session);
+```javascript
+// Auto-generates handoff on session close (≥5 turns)
+api.on("session_end", async (event, ctx) => {
+  const { sessionId, messageCount } = event;
+  if (messageCount >= minTurnsThreshold) {
+    await generateHandoffArtifact(sessionId);
   }
 });
 ```
+
+**Features:**
+- Automatic handoff generation on session close
+- Configurable minimum turn threshold (default: 5)
+- Optional review workflow before memory commit
+- Modal logic classification built-in
+- Output to `memory/handoffs/{sessionId}-handoff.md`
+
+**Status:** ✅ Running on Gateway v2026.6.11 since 2026-07-07
 
 **Status:** TypeScript source implemented, pending SDK compatibility update.
 

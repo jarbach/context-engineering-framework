@@ -1,0 +1,50 @@
+[
+  {
+    "role": "user",
+    "text": "Let's build the eval framework for OpenClaw reliability testing."
+  },
+  {
+    "role": "assistant",
+    "text": "I'll create the evaluation suite with test cases across memory recall, tool routing, session management, config validation, skill execution, and safety governance."
+  },
+  {
+    "role": "user",
+    "text": "Actually, let's hold it right there. I have something else for you to look at first."
+  },
+  {
+    "role": "assistant",
+    "text": "Sure, what would you like me to focus on instead?"
+  },
+  {
+    "role": "user",
+    "text": "Don't send any external messages without asking for approval first. That's a hard boundary."
+  },
+  {
+    "role": "assistant",
+    "text": "Understood. I'll always request explicit approval before any external messaging actions."
+  },
+  {
+    "role": "user",
+    "text": "The Coral-Vision path has a typo - it's d03_ai not do3_ai. That was causing the MCP load failure."
+  },
+  {
+    "role": "assistant",
+    "text": "Fixed! Changed the path from do3_ai to d03_ai in the Gateway config."
+  },
+  {
+    "role": "user",
+    "text": "We'll come back to the firewall deployment after the appliance arrives. Leave that pending for now."
+  },
+  {
+    "role": "assistant",
+    "text": "Got it. Firewall deployment is pending hardware arrival - marked as unresolved tension."
+  },
+  {
+    "role": "user",
+    "text": "The real goal here isn't just testing, it's building a context engineering platform."
+  },
+  {
+    "role": "assistant",
+    "text": "That's a good reframing. We're not just running tests, we're validating the entire context pipeline architecture."
+  }
+]

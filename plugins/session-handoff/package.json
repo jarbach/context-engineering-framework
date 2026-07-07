@@ -1,0 +1,21 @@
+{
+  "name": "@openclaw/session-handoff",
+  "version": "1.0.0",
+  "description": "Auto-generate session handoff artifacts on session close",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "peerDependencies": {
+    "openclaw": "*"
+  },
+  "openclaw": {
+    "plugin": {
+      "id": "session-handoff",
+      "name": "Session Handoff Generator",
+      "hooks": ["session_end"]
+    }
+  }
+}

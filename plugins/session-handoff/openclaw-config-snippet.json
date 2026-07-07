@@ -1,0 +1,37 @@
+{
+  "_comment": "Add this to ~/.openclaw/openclaw.json to enable session handoff plugin",
+  
+  "plugins": {
+    "entries": {
+      "session-handoff": {
+        "enabled": true,
+        "path": "/Users/ocuser/.openclaw/workspace/plugins/session-handoff",
+        "config": {
+          "minTurnsThreshold": 5,
+          "autoGenerate": true,
+          "requireReview": true,
+          "outputDir": "memory/handoffs",
+          "defaultExpiryDays": 90,
+          "modality": {
+            "necessaryExpiryDays": 365,
+            "contingentExpiryDays": 30,
+            "boostNecessaryInRetrieval": true
+          }
+        }
+      }
+    }
+  },
+  
+  "hooks": {
+    "internal": {
+      "entries": {
+        "session-handoff-notifier": {
+          "enabled": true,
+          "env": {
+            "HANDOFF_OUTPUT_DIR": "memory/handoffs"
+          }
+        }
+      }
+    }
+  }
+}

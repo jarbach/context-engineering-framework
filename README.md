@@ -67,7 +67,7 @@ Applies ranking adjustments based on modal logic distinction:
 
 **Inspired by:** LayerNorm interpretation as discarding contingent magnitude while preserving necessary relational structure.
 
-### 4. Gateway Plugin Integration
+### 4. Gateway Plugin Integration (Planned)
 **Typed hook-based lifecycle management:**
 
 ```typescript
@@ -79,7 +79,14 @@ hooks.session_end(async (session) => {
 });
 ```
 
-**Fallback:** Internal hook observer for message-based triggers.
+**Status:** TypeScript source implemented, pending SDK compatibility update.
+
+**Workaround:** Use the handoff generator skill directly in the meantime:
+```bash
+python3 skills/session-handoff-generator/generate-handoff.py \
+  --input session-transcript.json \
+  --output memory/handoffs/draft.md
+```
 
 ---
 

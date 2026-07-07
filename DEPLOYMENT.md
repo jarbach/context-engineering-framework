@@ -85,23 +85,17 @@ context-engineering-framework/
 ## Next Steps
 
 ### Immediate (This Week)
-1. **Build Plugin:**
+1. **Use Handoff Generator Directly:**
    ```bash
-   cd plugins/session-handoff
-   npm install && npm run build
+   cd skills/session-handoff-generator
+   python3 generate-handoff.py --input session.json --output draft.md
+   ./review-handoff.sh --input draft.md --output committed.md
    ```
 
-2. **Install & Configure:**
-   ```bash
-   # Add to ~/.openclaw/openclaw.json
-   # Restart Gateway
-   openclaw gateway restart
-   ```
-
-3. **Verify Load:**
-   ```bash
-   openclaw plugins list
-   ```
+2. **Gateway Plugin (Blocked):**
+   - TypeScript source needs SDK compatibility update
+   - Plugin SDK API differs from initial assumptions
+   - **Workaround:** Use skill directly until plugin is updated
 
 ### Short-Term (Next 2 Weeks)
 4. **Integration Testing:**
@@ -154,7 +148,7 @@ python3 modal_retrieval.py --query "your query" --output results.json
 | Eval Framework | 36 | 36 | 100% |
 | Modal Retrieval | 33 | 33 | 100% |
 | Handoff Generator | Manual tests | ✅ | N/A |
-| Gateway Plugin | Pending build | ⏳ | N/A |
+| Gateway Plugin | ⏳ SDK update needed | TypeScript source ready | N/A |
 
 **Overall Status:** ✅ Production-ready (pending plugin build)
 
